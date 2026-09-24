@@ -13,8 +13,9 @@ parser.add_argument("--source", required=True, help="image, video, webcam number
 parser.add_argument("--spots", required=True, help="json file from mark_spots.py")
 parser.add_argument("--model", default="models/yolo11m.pt")
 parser.add_argument("--conf", type=float, default=0.25)
-parser.add_argument("--imgsz", type=int, default=640)
-parser.add_argument("--tile", type=int, default=0, help="tile size, only needed if the cars are tiny (try 160-256)")
+parser.add_argument("--imgsz", type=int, default=2560, help="bigger finds more far away cars but is slower")
+parser.add_argument("--tile", type=int, default=0,
+                    help="tile size, only needed if the cars are tiny (try 224 with --imgsz 896)")
 parser.add_argument("--min-overlap", type=float, default=0.2, help="how much of a spot a car has to cover")
 parser.add_argument("--stride", type=int, default=1, help="only check every nth frame")
 parser.add_argument("--save", help="save the result image/video")

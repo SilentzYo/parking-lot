@@ -57,7 +57,7 @@ def split_row(corners, n):
 
 
 class Detector:
-    def __init__(self, model_path, conf=0.25, imgsz=640, tile=0):
+    def __init__(self, model_path, conf=0.25, imgsz=2560, tile=0):
         self.model = YOLO(model_path)
         self.conf = conf
         self.imgsz = imgsz
